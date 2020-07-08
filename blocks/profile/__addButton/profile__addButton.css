@@ -16,14 +16,6 @@
   background-image: url(../../../images/addbuttonhover.svg);
 }
 
-@media screen and (max-width: 500px) {
-  .profile__addButton {
-    width: 282px;
-    margin: 36px 0;
-    height: 50px;
-  }
-}
-
 @media screen and (max-width: 770px) {
   .profile__addButton {
     height: 40px;
@@ -31,4 +23,10 @@
   }
 }
 
-
+@media screen and (max-width: 500px) {
+  .profile__addButton {
+    width: 282px;
+    margin: 36px 0;
+    height: 50px;
+  }
+}
