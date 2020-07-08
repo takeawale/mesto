@@ -1,0 +1,29 @@
+.element__card {
+  background-color: white;
+  width: 282px;
+  height: 72px;
+  border-radius: 0 0 10px 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 900px) {
+  .element__card {
+    width: 250px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .element__card {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .element__card {
+    width: 282px;
+  }
+}

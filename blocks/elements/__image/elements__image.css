@@ -1,0 +1,23 @@
+.elements__image {
+  border-radius: 10px 10px 0px 0px;
+  display: block;
+}
+
+@media screen and (max-width: 900px) {
+  .elements__image {
+    width: 250px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .elements__image {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .elements__image {
+    width: 282px;
+  }
+}

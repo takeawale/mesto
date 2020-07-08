@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="pages/index.css">
+</head>
+<body class="body">
+    <div class="popup popup_opened">
+        <button class="popup__button-cross" type="button"></button>
+        <div class="popup__container">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form action="#" class="form">
+                <input type="text" class="form__input form__input_content_name" value="Жак-Ив Кусто">
+                <input type="text" class="form__input form__input_content_job" value="Исследователь океана">
+                <button class="popup__button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <header class="header">
+        <img class="header__logo" src="images/logo.svg" alt="логотип">
+        <hr class="header__line">
+    </header>
+    <section class="profile">
+        <div class="profile__items">
+            <img class="profile__avatar" src="images/avatar.png" alt="аватар">
+            <div>
+                <div class="profile__card">
+                    <h1 class="profile__user">Жак-Ив Кусто</h1>
+                    <button type="button" class="profile__editButton"></button>
+
+                </div>
+                <p class="profile__description">Исследователь океана</p>
+            </div>
+        </div>
+        <button type="button" class="profile__addButton"></button>
+    </section>
+    <ul class="elements">
+        <li class="elements__item">
+            <img src="images/castle.jpg" class="elements__image" alt="замок">
+            <div class="element__card">
+                <h2 class="element__title">Карачаевск</h2>
+                <img src="images/heart.svg" class="element__button" alt="лайк">
+            </div>
+        </li>
+        <li class="elements__item">
+            <img src="images/1.png" class="elements__image" alt="замок">
+            <div class="element__card">
+                <h2 class="element__title">Иваново</h2>
+                <img src="images/heart.svg" class="element__button" alt="лайк">
+            </div>
+        </li>
+        <li class="elements__item">
+            <img src="images/sunrise.jpg" class="elements__image" alt="замок">
+            <div class="element__card">
+                <h2 class="element__title">Карачаевск</h2>
+                <img src="images/heart.svg" class="element__button" alt="лайк">
+            </div>
+        </li>
+        <li class="elements__item">
+            <img src="images/6.png" class="elements__image" alt="природа">
+            <div class="element__card">
+                <h2 class="element__title">Красноярск</h2>
+                <img src="images/heart.svg" class="element__button" alt="лайк">
+            </div>
+        </li>
+        <li class="elements__item">
+            <img src="images/nature.jpg" class="elements__image" alt="природа">
+            <div class="element__card">
+                <h2 class="element__title">Карачаевск</h2>
+                <img src="images/heart.svg" class="element__button" alt="лайк">
+            </div>
+        </li>
+        <li class="elements__item">
+            <img src="images/7.png" class="elements__image" alt="природа">
+            <div class="element__card">
+                <h2 class="element__title">Байкал</h2>
+                <img src="images/heart.svg" class="element__button" alt="лайк">
+            </div>
+        </li>
+    </ul>
+    <footer class="footer">
+        <a href="#" class="footer__link">© 2020 Mesto Russia</a>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@import url(./__button/elements__button.css);
+@import url(./__card/elements__card.css);
+@import url(./__image/elements__image.css);
+@import url(./__title/elements__title.css);
+@import url(./__item/elements__item.css);
+
+.elements {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 18px;
+  grid-column-gap: 21px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .elements {
+    grid-column-gap: 0px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .elements {
+    max-width: 600px;
+    grid-column-gap: 5px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .elements {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+  }
+}
