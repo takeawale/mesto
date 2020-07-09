@@ -1,5 +1,5 @@
 .profile__user {
-  font-family: "Inter", "Arial", sans-serif;
+  font-family: 'Inter', 'Arial', sans-serif;
   color: #ffffff;
   font-style: normal;
   font-weight: 500;
@@ -9,17 +9,16 @@
   margin-left: 30px;
 }
 
+@media screen and (max-width: 780px) {
+  .profile__user {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .profile__user {
     font-size: 27px;
     margin-bottom: 14px;
   }
-}
-
-
-@media screen and (max-width: 770px) {
-  .profile__user {
-font-size: 30px;
-margin-bottom: 0;
-}
 }

@@ -1,12 +1,13 @@
 .elements__image {
   border-radius: 10px 10px 0px 0px;
   display: block;
+  margin: 0;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 913px) {
   .elements__image {
     width: 250px;
-    margin: 0 auto;
+
   }
 }
 
@@ -16,7 +17,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 630px) {
   .elements__image {
     width: 282px;
   }

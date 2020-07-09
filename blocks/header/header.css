@@ -1,5 +1,5 @@
-@import url(../__line/header__line.css);
-@import url(../header/__logo/header__logo.css);
+@import url(./__line/header__line.css);
+@import url(./__logo/header__logo.css);
 
 .header {
   max-width: 882px;
@@ -7,8 +7,6 @@
   padding: 45px 0px 37px;
   margin: 0 auto;
 }
-
-
 
 @media screen and (max-width: 900px) {
   .header {
@@ -22,11 +20,17 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 620px) {
+  .header {
+    max-width: 550px;
+  }
+}
+
+@media screen and (max-width: 550px) {
   .header {
     margin-top: 28px;
     margin-bottom: 38px;
     padding: 0;
-    width: 320px;
+    width: 315px;
   }
 }

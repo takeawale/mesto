@@ -1,4 +1,15 @@
-.element__button {
+.elements__button {
   margin-right: 15px;
-  max-width: 100px;
+  width: 25px;
+  height: 20px;
+  background-image: url(../../../images/heart.svg);
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+.elements__button:hover {
+  margin-top: 6px;
+  cursor: pointer;
 }

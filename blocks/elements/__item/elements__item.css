@@ -1,24 +1,15 @@
 .elements__item {
-  width: 282px;
   list-style-type: none;
+  align-items: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 780px) {
   .elements__item {
-    width: 250px;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 770px) {
-  .elements__item {
-    width: 200px;
     margin: 0;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 630px) {
   .elements__item {
     margin: 0 auto;
-    width: 282px;
   }
 }

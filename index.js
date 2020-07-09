@@ -1,6 +1,13 @@
 const openModalButton = document.querySelector('.profile__editButton');
 const closeModalButton = document.querySelector('.popup__button-cross');
 const popup = document.querySelector('.popup');
+const formElement = document.querySelector('.form');
+const nameInput = formElement.querySelector('.form__input_content_name');
+const jobInput = formElement.querySelector('.form__input_content_job');
+const elementName = document.querySelector('.profile__user');
+const elementDescription = document.querySelector('.profile__description');
+const formButton = document.querySelector('.form__button');
+
 
 
 
@@ -16,13 +23,11 @@ closeModalButton.addEventListener('click', () => {
 })
 
 
+formButton.addEventListener('click', () => {
+    popup.classList.remove('popup_opened');
 
+})
 
-const formElement = document.querySelector('.form');
-const nameInput = formElement.querySelector('.form__input_content_name');
-const jobInput = formElement.querySelector('.form__input_content_job');
-const elementName = document.querySelector('.profile__user');
-const elementDescription = document.querySelector('.profile__description');
 
 
 function formSubmitHandler(evt) {
@@ -35,15 +40,6 @@ function formSubmitHandler(evt) {
 
 formElement.addEventListener('submit', formSubmitHandler);
 
-
-
-
-const popupButton = document.querySelector('.popup__button');
-
-popupButton.addEventListener('click', () => {
-    popup.classList.remove('popup_opened');
-
-})
 
 
 
