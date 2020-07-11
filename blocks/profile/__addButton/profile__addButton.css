@@ -16,7 +16,7 @@
   background-image: url(../../../images/addbuttonhover.svg);
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
   .profile__addButton {
     height: 40px;
     width: 100px;

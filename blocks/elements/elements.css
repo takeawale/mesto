@@ -23,7 +23,7 @@
     grid-gap: 17px 14px;
   }
 }
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
   .elements {
     grid-column-gap: 5px;
     margin: 0 auto;
