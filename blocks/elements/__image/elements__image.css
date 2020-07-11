@@ -7,7 +7,7 @@
 @media screen and (max-width: 913px) {
   .elements__image {
     width: 250px;
-
+    margin: 0 auto;
   }
 }
 

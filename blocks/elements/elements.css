@@ -17,7 +17,9 @@
 
 @media screen and (max-width: 913px) {
   .elements {
-    width: 582px;
+    
+    max-width: 90%;
+
     grid-gap: 17px 14px;
   }
 }

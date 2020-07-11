@@ -10,6 +10,6 @@
 }
 
 .elements__button:hover {
-  margin-top: 6px;
+  opacity: 0.2;
   cursor: pointer;
 }
