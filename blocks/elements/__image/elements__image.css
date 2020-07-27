@@ -2,6 +2,12 @@
   border-radius: 10px 10px 0px 0px;
   display: block;
   margin: 0;
+  background-size: cover;
+
+  background-repeat: round;
+  width: 282px;
+  height: 250px;
+  z-index: 0;
 }
 
 @media screen and (max-width: 913px) {

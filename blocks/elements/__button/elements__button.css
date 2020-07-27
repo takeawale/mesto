@@ -13,3 +13,7 @@
   opacity: 0.2;
   cursor: pointer;
 }
+
+.elements__buttonActive {
+  background-image: url(../../../images/heartTyped.svg);
+}

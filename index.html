@@ -7,17 +7,6 @@
     <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="body">
-    <div class="popup">
-        <div class="popup__container">
-            <button class="popup__button-cross" type="button"></button>
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form action="#" class="form">
-                <input type="text" class="form__input form__input_content_name" value="Жак-Ив Кусто">
-                <input type="text" class="form__input form__input_content_job" value="Исследователь океана">
-                <button class="form__button">Сохранить</button>
-            </form>
-        </div>
-    </div>
     <header class="header">
         <img class="header__logo" src="images/logo.svg" alt="логотип">
         <hr class="header__line">
@@ -29,7 +18,6 @@
                 <div class="profile__card">
                     <h1 class="profile__user">Жак-Ив Кусто</h1>
                     <button type="button" class="profile__editButton"></button>
-
                 </div>
                 <p class="profile__description">Исследователь океана</p>
             </div>
@@ -37,52 +25,53 @@
         <button type="button" class="profile__addButton"></button>
     </section>
     <ul class="elements">
-        <li class="elements__item">
-            <img src="images/castle.jpg" class="elements__image" alt="замок">
-            <div class="element__card">
-                <h2 class="element__title">Карачаевск</h2>
-                <button type="button" class="elements__button"></button>
-            </div>
-        </li>
-        <li class="elements__item">
-            <img src="images/1.png" class="elements__image" alt="замок">
-            <div class="element__card">
-                <h2 class="element__title">Иваново</h2>
-                <button type="button" class="elements__button"></button>
-            </div>
-        </li>
-        <li class="elements__item">
-            <img src="images/sunrise.jpg" class="elements__image" alt="замок">
-            <div class="element__card">
-                <h2 class="element__title">Карачаевск</h2>
-                <button type="button" class="elements__button"></button>
-            </div>
-        </li>
-        <li class="elements__item">
-            <img src="images/6.png" class="elements__image" alt="природа">
-            <div class="element__card">
-                <h2 class="element__title">Красноярск</h2>
-                <button type="button" class="elements__button"></button>
-            </div>
-        </li>
-        <li class="elements__item">
-            <img src="images/nature.jpg" class="elements__image" alt="природа">
-            <div class="element__card">
-                <h2 class="element__title">Карачаевск</h2>
-                <button type="button" class="elements__button"></button>
-            </div>
-        </li>
-        <li class="elements__item">
-            <img src="images/7.png" class="elements__image" alt="природа">
-            <div class="element__card">
-                <h2 class="element__title">Байкал</h2>
-                <button type="button" class="elements__button"></button>
-            </div>
-        </li>
     </ul>
     <footer class="footer">
         <a href="#" class="footer__link">© 2020 Mesto Russia</a>
     </footer>
+    <div class="popup popup_type_edit">
+        <div class="popup__container">
+            <button class="popup__button-cross" type="button"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form action="#" class="form">
+                <input type="text" class="form__input form__input_content_name" value="Жак-Ив Кусто">
+                <input type="text" class="form__input form__input_content_job" value="Исследователь океана">
+                <button class="form__button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_type_image">
+        <div class="popup__container_type_image">
+            <button class="popup__button-cross" type="button"></button>
+            <img class="popup__image" alt="изображение" src="">
+            <figure class="popup__caption"></figure>
+        </div>
+    </div>
+    <div class="popup popup_type_new-card">
+        <div class="popup__container">
+            <button class="popup__button-cross" type="button"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form action="#" class="form">
+                <input type="text" class="form__input form__input_type_place" value="Название">
+                <input type="text" class="form__input form__input_type_url" value="Ссылка на картинку">
+                <button class="form__button">Создать</button>
+            </form>
+        </div>
+    </div>
+    <template id="card">
+        <li class="elements__item">
+            <div class="elements__container">
+                <button class="elements__image-button">
+                    <div class="elements__image"></div>
+                </button>
+                <button type="button" class="elements__button-delete"></button>
+            </div>
+            <div class="element__card">
+                <h2 class="element__title"></h2>
+                <button type="button" class="elements__button"></button>
+            </div>
+        </li>
+    </template>
     <script src="index.js"></script>
 </body>
 </html>
