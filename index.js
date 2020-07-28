@@ -102,7 +102,6 @@ function addCardSubmitHandler(evt) {
    
     evt.preventDefault(); 
 
-    console.log(placeInput.value, urlInput.value);
 
     renderCard({name: placeInput.value, link: urlInput.value})
      profileUser.textContent = titleInputValue.value;
