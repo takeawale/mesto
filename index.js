@@ -71,6 +71,20 @@ const initialCards = [
     }
 ];
 
+//feature of closing popup by click on esc button
+  document.addEventListener('keydown', function (evt) {
+    if(evt.keyCode === 27) addCardModal.classList.remove('popup_opened');
+  });
+
+  document.addEventListener('keydown', function (evt) {
+    if(evt.keyCode === 27) editProfileModal.classList.remove('popup_opened');
+  });
+
+  document.addEventListener('keydown', function (evt) {
+    if(evt.keyCode === 27) imageModal.classList.remove('popup_opened');
+  });
+
+
 
 
 const handleImageClick = (data) => {
@@ -179,3 +193,23 @@ closeAddModal.addEventListener('click', () => {
 closeImageModal.addEventListener('click', () => {
     toggleModalWindow(imageModal);
 });
+
+
+//feature of closing popup by click on overlay
+editProfileModal.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup_closed')) {
+        toggleModalWindow(editProfileModal);
+    }
+}); 
+
+addCardModal.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup_closed')) {
+        toggleModalWindow(addCardModal);
+    }
+}); 
+
+imageModal.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup_closed')) {
+        toggleModalWindow(imageModal);
+    }
+}); 

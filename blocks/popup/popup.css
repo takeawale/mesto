@@ -9,7 +9,7 @@
 @import url(./_type_image/popup_type_image.css);
 
 .popup {
-  background-color: rgba(0, 0, 0, 0.55);
+z-index: 3;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -18,8 +18,9 @@
   left: 0;
   justify-content: center;
   align-items: center;
-
+  background-color: rgba(0, 0, 0, 0.55);
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
 }
+
