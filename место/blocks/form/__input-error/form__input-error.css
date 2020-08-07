@@ -1,0 +1,14 @@
+
+
+/* класс для спана */
+.form__input-error {
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0px 35px 0px;
+    color: #FF0000;
+    float: left;
+}
+

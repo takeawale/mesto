@@ -8,7 +8,7 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-
+  outline: none;
   color: #000000;
   text-overflow: ellipsis;
   white-space: nowrap;

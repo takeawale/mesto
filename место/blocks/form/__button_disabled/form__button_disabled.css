@@ -1,0 +1,16 @@
+.form__button_disabled {
+  background: none;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #c4c4c4;
+}
+
+.form__button_disabled:hover {
+  background: none;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #c4c4c4;
+  cursor: default;
+}

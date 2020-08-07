@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mesto</title>
     <link rel="stylesheet" href="pages/index.css">
 </head>
+
 <body class="body">
     <header class="header">
         <img class="header__logo" src="images/logo.svg" alt="логотип">
@@ -34,29 +36,14 @@
             <button class="popup__button-cross" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form novalidate class="form" id="my-form">
-                <input placeholder="name"
-                 name="Имя" 
-                autocomplete="off"
-                id="name-input" 
-                required 
-                type="text" 
-                class="form__input form__input_content_name" 
-                maxlength="40" 
-                minlength="2" 
-                value="Жак-Ив Кусто">
+                <input placeholder="Имя" name="name" autocomplete="off" id="name-input" required type="text"
+                    class="form__input form__input_content_name" maxlength="40" minlength="2" value="Жак-Ив Кусто">
                 <span class="form__input-error" id="name-input-error"></span>
-                <input placeholder="Описание"
-                 name="description" 
-                 autocomplete="off"
-                 id="description-input" 
-                 required
-                  type="text" 
-                class="form__input form__input_content_name"
-                 maxlength="200"
-                  minlength="2"
-                   value="Исследователь океана">
+                <input placeholder="Описание" name="description" autocomplete="off" id="description-input" required
+                    type="text" class="form__input form__input_content_job" maxlength="200" minlength="2"
+                    value="Исследователь океана">
                 <span class="form__input-error" id="description-input-error"></span>
-                <button type="submit" class="form__button form__button_udisabled form__button_disabled">Сохранить</button>
+                <button disabled type="submit" class="form__button">Сохранить</button>
             </form>
         </div>
     </div>
@@ -72,11 +59,13 @@
             <button class="popup__button-cross" type="button"></button>
             <h2 class="popup__title">Новое место</h2>
             <form novalidate id="my-form" class="form">
-                <input id="place-input" required type="text" class="form__input form__input_type_place" placeholder="Название" maxlength="30" minlength="1">
+                <input id="place-input" required type="text" class="form__input form__input_type_place"
+                    placeholder="Название" maxlength="30" minlength="1">
                 <span class="form__input-error" id="place-input-error"></span>
-                <input required type="url" class="form__input form__input_type_url" pattern="url" placeholder="Ссылка на картинку">
-                <span class="form__input-error" id="email-input-error"></span>
-                <button disabled type="submit" class="form__button form__button_udisabled form__button_disabled">Создать</button>
+                <input id="image-url_input" required type="url" class="form__input form__input_type_url" pattern="url"
+                    placeholder="Ссылка на картинку">
+                <span class="form__input-error" id="image-url_input-error"></span>
+                <button disabled type="submit" class="form__button">Создать</button>
             </form>
         </div>
     </div>
@@ -98,4 +87,5 @@
     <script src="validate.js"></script>
     <script src="index.js"></script>
 </body>
-</html> 
+
+</html>
