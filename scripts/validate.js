@@ -1,3 +1,8 @@
+
+
+
+
+
 const formElement = document.querySelector('.form')
 const formInput = formElement.querySelector('.form__input')
 const formError = formElement.querySelector(`#${ formInput.id }-error`)
@@ -6,24 +11,33 @@ formElement.addEventListener('submit', function (evt) {
 })
 formInput.addEventListener('input', function (evt) {
 })
+//Функционал включения\выключения кнопки сабмита в отдельную функции. 
+const popupButtonDisabled = (buttonSubmit) => {
+  buttonSubmit.classList.add('form__button_disabled');
+  buttonSubmit.disabled = trueб;
+}
+
+const popupButtonAсtive = (buttonSubmit) => {
+  buttonSubmit.classList.remove('form__button_disabled');
+  buttonSubmit.disabled = false;
+}
 const showInputError = ({ input, error, buttonSubmit }) => {
   const errorMessage = input.validationMessage || 'error'
   input.classList.add('form__input_invalid');
   error.textContent = errorMessage
   error.classList.add('form__input-error_active');
-  buttonSubmit.disabled = true;
-  buttonSubmit.classList.add('form__button_disabled');
+  popupButtonDisabled(buttonSubmit);
 
 }
 const hideInputError = ({ input, error, buttonSubmit }) => {
-  input.classList.remove('form__input_invalid')
-  error.classList.remove('form__input-error_active')
-  error.textContent = ''
-  buttonSubmit.disabled = false;
-  buttonSubmit.classList.remove('form__button_disabled');
+  input.classList.remove('form__input_invalid');
+  error.classList.remove('form__input-error_active');
+  error.textContent = '';
+  popupButtonAсtive(buttonSubmit);
 }
+
 const isValid = ({ input, error, buttonSubmit }) => {
-  if (input.value.length > 2) {
+  if (input.validity.valid) {
     hideInputError({ input, error, buttonSubmit })
   } else {
     showInputError({ input, error, buttonSubmit })
@@ -54,5 +68,3 @@ const enableValidation = () => {
   });
 };
 enableValidation()
-
-

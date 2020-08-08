@@ -71,6 +71,24 @@ const initialCards = [
     }
 ];
 
+
+const handlerOnEscape = (evt, modalWindow) => {
+    if (evt.keyCode === 27 && modalWindow.classList.contains('popup_opened')) {
+        toggleModalWindow(modalWindow);
+    }
+}
+
+//ESC
+const addEventListenersEsc = (modalWindow) => {
+    document.addEventListener('keydown', (evt) => handlerOnEscape(evt, modalWindow));    
+}
+//ESC
+const removeEventListenersEsc = (modalWindow) => {
+    document.removeEventListener('keydown', (evt) => handlerOnEscape(evt, modalWindow));
+}
+ 
+
+/*
 //feature of closing popup by click on esc button
   document.addEventListener('keydown', function (evt) {
     if(evt.keyCode === 27) addCardModal.classList.remove('popup_opened');
@@ -84,7 +102,7 @@ const initialCards = [
     if(evt.keyCode === 27) imageModal.classList.remove('popup_opened');
   });
 
-
+*/
 
 
 const handleImageClick = (data) => {
