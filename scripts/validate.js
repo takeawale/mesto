@@ -11,10 +11,10 @@ formElement.addEventListener('submit', function (evt) {
 })
 formInput.addEventListener('input', function (evt) {
 })
-//Функционал включения\выключения кнопки сабмита в отдельную функции. 
+//Функционал включения\выключения кнопки сабмита вынесла в отдельные функции. 
 const popupButtonDisabled = (buttonSubmit) => {
   buttonSubmit.classList.add('form__button_disabled');
-  buttonSubmit.disabled = trueб;
+  buttonSubmit.disabled = true;
 }
 
 const popupButtonAсtive = (buttonSubmit) => {
@@ -37,6 +37,7 @@ const hideInputError = ({ input, error, buttonSubmit }) => {
 }
 
 const isValid = ({ input, error, buttonSubmit }) => {
+  // заменила на свойство ValidityState 
   if (input.validity.valid) {
     hideInputError({ input, error, buttonSubmit })
   } else {

@@ -72,21 +72,6 @@ const initialCards = [
 ];
 
 
-const handlerOnEscape = (evt, modalWindow) => {
-    if (evt.keyCode === 27 && modalWindow.classList.contains('popup_opened')) {
-        toggleModalWindow(modalWindow);
-    }
-}
-
-//ESC
-const addEventListenersEsc = (modalWindow) => {
-    document.addEventListener('keydown', (evt) => handlerOnEscape(evt, modalWindow));    
-}
-//ESC
-const removeEventListenersEsc = (modalWindow) => {
-    document.removeEventListener('keydown', (evt) => handlerOnEscape(evt, modalWindow));
-}
- 
 
 /*
 //feature of closing popup by click on esc button
@@ -213,6 +198,18 @@ closeImageModal.addEventListener('click', () => {
 });
 
 
+// упростила созданием новой ф-ии
+function onPopupOverlayClick(evt) {
+    if (evt.target = evt.currentTarget) { 
+        toggleModalWindow(evt.target)}
+  }
+  
+  editProfileModal.addEventListener('click', onPopupOverlayClick);
+  addCardModal.addEventListener('click', onPopupOverlayClick);
+  imageModal.addEventListener('click', onPopupOverlayClick);
+
+
+  /* выше переделано
 //feature of closing popup by click on overlay
 editProfileModal.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup_closed')) {
@@ -231,3 +228,5 @@ imageModal.addEventListener('click', (evt) => {
         toggleModalWindow(imageModal);
     }
 }); 
+
+*/
