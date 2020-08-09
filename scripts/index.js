@@ -75,12 +75,6 @@ const initialCards = [
   },
 ];
 
-/* Ролан, спасибо Вам большое за Вашу работу:).
- Очень рада, что именно Вы вновь проверяете и оставляете
-конструктивные и понятные комментарии, вы абсолютно точно очень помогаете мне с 
-выполнением проекта и скрашиваете мое многочасовое и очень тяжкое пребывание за кодом!
-ps Ваше имя тоже мне нравится) 
-*/
 
 const handleImageClick = (data) => {
   imageModalImg.src = data.link;
@@ -88,11 +82,48 @@ const handleImageClick = (data) => {
   imageModalTitle.textContent = data.name;
   toggleModalWindow(imageModal);
 };
-//слушатель на закрытие модального окна по клавише Esc  создается
-//и удаляется при открытии и закрытии модального окна.
+
 function toggleModalWindow(modalWindow) {
   modalWindow.classList.toggle("popup_opened");
 }
+
+const allPopups = Array.from(document.querySelectorAll('.popup')); 
+const isPopupOpened = (popup) => {
+  return popup.classList.contains("popup_opened");
+}
+
+const handleEscape = (evt) => {
+  if (evt.key === "Escape") {
+    const popupElement = allPopups.find(function (popupItem) {
+      return isPopupOpened(popupItem);
+    });
+    if (popupElement != undefined) {
+      toggleModalWindow(popupElement);
+    }
+  }
+}
+
+
+  function setEventListenerEsc(modalWindow) {// открыть модалку    
+    document.addEventListener('keydown', handleEscape);
+    modalWindow.classList.add('popup_opened');    
+}
+
+function deleteEventListenerEsc(modalWindow) {// открыть модалку    
+  document.removeEventListener('keydown', handleEscape);
+  modalWindow.classList.remove('popup_opened');    
+}
+
+/*
+//Функция toggleModalWindow:
+//При открытии попапа вызывает setEventListenerEsc
+//При закрытии попапа вызывает deleteEventListenerEsc
+
+
+/*
+//слушатель на закрытие модального окна по клавише Esc  создается
+//и удаляется при открытии и закрытии модального окна.
+
 const handleEscape = (evt, modalWindow) => {
   if (evt.keyCode === 27 && modalWindow.classList.contains("popup_opened")) {
     modalWindow.classList.remove("popup_opened");
@@ -109,7 +140,7 @@ const addEventListenersEsc = (modalWindow) => {
 const deleteEventEdit = addEventListenersEsc(editProfileModal);
 const deleteEventAdd = addEventListenersEsc(addCardModal);
 const deleteEventImage = addEventListenersEsc(imageModal);
-
+*/
 function formSubmitHandler(evt) {
   evt.preventDefault();
 
@@ -171,22 +202,28 @@ addCardForm.addEventListener("submit", addCardSubmitHandler);
 
 editButton.addEventListener("click", () => {
   toggleModalWindow(editProfileModal);
+  setEventListenerEsc();
 });
 
 closeEditModal.addEventListener("click", () => {
   toggleModalWindow(editProfileModal);
+  deleteEventListenerEsc();
+
 });
 
 addButton.addEventListener("click", () => {
   toggleModalWindow(addCardModal);
+  setEventListenerEsc();
 });
 
 closeAddModal.addEventListener("click", () => {
   toggleModalWindow(addCardModal);
+  deleteEventListenerEsc();
 });
 
 closeImageModal.addEventListener("click", () => {
   toggleModalWindow(imageModal);
+  deleteEventListenerEsc();
 });
 
 // упростила созданием новой ф-ии
