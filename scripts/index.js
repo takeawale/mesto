@@ -83,7 +83,7 @@ const handleImageClick = (data) => {
   toggleModalWindow(imageModal);
 };
 
-
+// в таком случае, надеюсь, в последующие разы Вы снова сможете проверять мои работы:)
 
 const allPopups = Array.from(document.querySelectorAll('.popup')); 
 const isPopupOpened = (popup) => {
@@ -117,38 +117,11 @@ const handleEscape = (evt) => {
 
 }
 
-function deleteEventListenerEsc(modalWindow) {// открыть модалку    
+function deleteEventListenerEsc(modalWindow) {// закрыть модалку    
   document.removeEventListener('keydown', handleEscape);
    
 }
 
-/*
-//Функция toggleModalWindow:
-//При открытии попапа вызывает setEventListenerEsc
-//При закрытии попапа вызывает deleteEventListenerEsc
-
-
-/*
-//слушатель на закрытие модального окна по клавише Esc  создается
-//и удаляется при открытии и закрытии модального окна.
-
-const handleEscape = (evt, modalWindow) => {
-  if (evt.keyCode === 27 && modalWindow.classList.contains("popup_opened")) {
-    modalWindow.classList.remove("popup_opened");
-  }
-};
-const addEventListenersEsc = (modalWindow) => {
-  const method = (evt) => handleEscape(evt, modalWindow);
-  document.addEventListener("keydown", method);
-  return () => {
-    document.removeEventListener("keydown", method);
-  };
-};
-
-const deleteEventEdit = addEventListenersEsc(editProfileModal);
-const deleteEventAdd = addEventListenersEsc(addCardModal);
-const deleteEventImage = addEventListenersEsc(imageModal);
-*/
 function formSubmitHandler(evt) {
   evt.preventDefault();
 
