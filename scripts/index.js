@@ -83,13 +83,21 @@ const handleImageClick = (data) => {
   toggleModalWindow(imageModal);
 };
 
-function toggleModalWindow(modalWindow) {
-  modalWindow.classList.toggle("popup_opened");
-}
+
 
 const allPopups = Array.from(document.querySelectorAll('.popup')); 
 const isPopupOpened = (popup) => {
   return popup.classList.contains("popup_opened");
+}
+
+
+function toggleModalWindow(modalWindow) {
+  modalWindow.classList.toggle("popup_opened");
+  if (isPopupOpened(modalWindow)) {
+    setEventListenerEsc();
+  } else {
+    deleteEventListenerEsc();
+  }
 }
 
 const handleEscape = (evt) => {
@@ -106,12 +114,12 @@ const handleEscape = (evt) => {
 
   function setEventListenerEsc(modalWindow) {// открыть модалку    
     document.addEventListener('keydown', handleEscape);
-    modalWindow.classList.add('popup_opened');    
+
 }
 
 function deleteEventListenerEsc(modalWindow) {// открыть модалку    
   document.removeEventListener('keydown', handleEscape);
-  modalWindow.classList.remove('popup_opened');    
+   
 }
 
 /*
@@ -184,7 +192,7 @@ function createCard(data) {
 
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
-    // handleDeleteClick()
+
   });
 
   cardImage.addEventListener("click", () => {
@@ -202,28 +210,29 @@ addCardForm.addEventListener("submit", addCardSubmitHandler);
 
 editButton.addEventListener("click", () => {
   toggleModalWindow(editProfileModal);
-  setEventListenerEsc();
+
 });
 
 closeEditModal.addEventListener("click", () => {
   toggleModalWindow(editProfileModal);
-  deleteEventListenerEsc();
+
 
 });
 
 addButton.addEventListener("click", () => {
+
   toggleModalWindow(addCardModal);
-  setEventListenerEsc();
+
 });
 
 closeAddModal.addEventListener("click", () => {
   toggleModalWindow(addCardModal);
-  deleteEventListenerEsc();
+
 });
 
 closeImageModal.addEventListener("click", () => {
   toggleModalWindow(imageModal);
-  deleteEventListenerEsc();
+
 });
 
 // упростила созданием новой ф-ии
