@@ -1,3 +1,7 @@
+/*
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
+*/
 // wrappers
 const addCardModal = document.querySelector(".popup_type_new-card");
 const editProfileModal = document.querySelector(".popup_type_edit");
@@ -83,10 +87,7 @@ const handleImageClick = (data) => {
   toggleModalWindow(imageModal);
 };
 
-/*  Я очень надеюсь, что вы примите работу. 
-Мне очень тяжело дается курс, Все исправила, не уверена, 
- что как вы написали, но все работает. 
-и еще очень надеюсь что вы и в дальшейнем сможете проверять мои работы  */
+
 
 const allPopups = Array.from(document.querySelectorAll('.popup')); 
 const isPopupOpened = (popup) => {

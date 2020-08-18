@@ -5,7 +5,7 @@ formElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
 });
 formInput.addEventListener("input", function (evt) {});
-//Функционал включения\выключения кнопки сабмита вынесла в отдельные функции.
+
 const popupButtonDisabled = (buttonSubmit) => {
   buttonSubmit.classList.add("form__button_disabled");
   buttonSubmit.disabled = true;
