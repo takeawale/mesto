@@ -1,14 +1,37 @@
-/*
+
 import Card from './Card.js';
-import FormValidator from './FormValidator.js';
-*/
+import FormValidation from './FormValidation.js';
+
+const config = {
+  inputSelector: '.form__input',
+  submitButtonSelector: '.form__button',
+  inactiveButtonClass: 'form__button_disabled',
+  inputErrorClass: 'form__input_invalid',
+  errorClass: 'form__input-error_visible'
+}
+
 // wrappers
 const addCardModal = document.querySelector(".popup_type_new-card");
 const editProfileModal = document.querySelector(".popup_type_edit");
 const imageModal = document.querySelector(".popup_type_image");
 
+
 const editForm = editProfileModal.querySelector(".form");
 const addCardForm = addCardModal.querySelector(".form");
+
+// const addFormValidator = new FormValidator(config, addCardForm)
+// addFormValidator.enableValidation()
+
+// const editFormValidator = new FormValidator(config, editForm)
+// editFormValidator.enableValidation()
+
+
+const addFormValidation = new FormValidation(config, addCardForm)
+addFormValidation.enableValidation()
+
+const editFormValidation = new FormValidation(config, editForm)
+editFormValidation.enableValidation()
+
 
 //buttons
 
@@ -45,6 +68,12 @@ const cardTemplate = document
   .querySelector("#card")
   .content.querySelector(".elements__item");
 const list = document.querySelector(".elements");
+
+
+
+
+
+
 
 const initialCards = [
   {
@@ -145,42 +174,16 @@ function addCardSubmitHandler(evt) {
 }
 
 function renderCard(data) {
-  list.prepend(createCard(data));
+  const card = new Card(data, "#card" )
+  list.prepend(card.getView());
+
 }
 
 initialCards.forEach((data) => {
   renderCard(data);
 });
 
-function createCard(data) {
-  const cardElement = cardTemplate.cloneNode(true);
 
-  const cardImage = cardElement.querySelector(".elements__image");
-  const cardTitle = cardElement.querySelector(".element__title");
-  const cardLikeButton = cardElement.querySelector(".elements__button");
-  const cardDeleteButton = cardElement.querySelector(
-    ".elements__button-delete"
-  );
-
-  cardLikeButton.addEventListener("click", (event) => handleLikeIcon(event));
-  const handleLikeIcon = (evt) => {
-    evt.target.classList.toggle("elements__buttonActive");
-  };
-
-  cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove();
-
-  });
-
-  cardImage.addEventListener("click", () => {
-    handleImageClick(data);
-  });
-
-  cardTitle.textContent = data.name;
-  cardImage.style.backgroundImage = `url(${data.link})`;
-
-  return cardElement;
-}
 
 editForm.addEventListener("submit", formSubmitHandler);
 addCardForm.addEventListener("submit", addCardSubmitHandler);
@@ -188,7 +191,15 @@ addCardForm.addEventListener("submit", addCardSubmitHandler);
 editButton.addEventListener("click", () => {
   toggleModalWindow(editProfileModal);
 
+
+  titleInputValue.value = profileUser.textContent
+  descriptionInputValue.value = profileDescription.textContent
+
+
+  
 });
+
+
 
 closeEditModal.addEventListener("click", () => {
   toggleModalWindow(editProfileModal);
@@ -212,9 +223,9 @@ closeImageModal.addEventListener("click", () => {
 
 });
 
-// упростила созданием новой ф-ии
+
 function onPopupOverlayClick(evt) {
-  if ((evt.target = evt.currentTarget)) {
+  if ((evt.target == evt.currentTarget)) {
     toggleModalWindow(evt.target);
   }
 }

@@ -30,7 +30,7 @@ const hideInputError = ({ input, error, buttonSubmit }) => {
 };
 
 const isValid = ({ input, error, buttonSubmit }) => {
-  // заменила на свойство ValidityState
+
   if (input.validity.valid) {
     hideInputError({ input, error, buttonSubmit });
   } else {

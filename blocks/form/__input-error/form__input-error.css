@@ -10,5 +10,9 @@
     margin: 0px 35px 0px;
     color: #FF0000;
     float: left;
+    display: none;
 }
 
+.form__input-error_visible {
+    display: block;
+}
