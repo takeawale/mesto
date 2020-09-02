@@ -18,14 +18,6 @@ const imageModal = document.querySelector(".popup_type_image");
 
 const editForm = editProfileModal.querySelector(".form");
 const addCardForm = addCardModal.querySelector(".form");
-
-// const addFormValidator = new FormValidator(config, addCardForm)
-// addFormValidator.enableValidation()
-
-// const editFormValidator = new FormValidator(config, editForm)
-// editFormValidator.enableValidation()
-
-
 const addFormValidation = new FormValidation(config, addCardForm)
 addFormValidation.enableValidation()
 
@@ -72,9 +64,6 @@ const list = document.querySelector(".elements");
 
 
 
-
-
-
 const initialCards = [
   {
     name: "Архыз",
@@ -108,7 +97,6 @@ const initialCards = [
   },
 ];
 
-
 const handleImageClick = (data) => {
   imageModalImg.src = data.link;
   imageModalImg.alt = `Изображение ${data.name}`;
@@ -116,9 +104,7 @@ const handleImageClick = (data) => {
   toggleModalWindow(imageModal);
 };
 
-
-
-const allPopups = Array.from(document.querySelectorAll('.popup')); 
+const allPopups = Array.from(document.querySelectorAll('.popup'));
 const isPopupOpened = (popup) => {
   return popup.classList.contains("popup_opened");
 }
@@ -145,14 +131,14 @@ const handleEscape = (evt) => {
 }
 
 
-  function setEventListenerEsc(modalWindow) {// открыть модалку    
-    document.addEventListener('keydown', handleEscape);
+function setEventListenerEsc(modalWindow) {// открыть модалку    
+  document.addEventListener('keydown', handleEscape);
 
 }
 
 function deleteEventListenerEsc(modalWindow) {// закрыть модалку    
   document.removeEventListener('keydown', handleEscape);
-   
+
 }
 
 function formSubmitHandler(evt) {
@@ -174,7 +160,7 @@ function addCardSubmitHandler(evt) {
 }
 
 function renderCard(data) {
-  const card = new Card(data, "#card" )
+  const card = new Card(data, "#card")
   list.prepend(card.getView());
 
 }
@@ -196,7 +182,7 @@ editButton.addEventListener("click", () => {
   descriptionInputValue.value = profileDescription.textContent
 
 
-  
+
 });
 
 

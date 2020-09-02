@@ -3,30 +3,30 @@ export default class FormValidation {
         this._settings = settings;
         this._form = form;
     }
-    // _popupButtonDisabled({ input, error, button }) {
-    //     button.classList.add(inactiveButtonClass);
-    //     button.disabled = true;
-    // }
+    _popupButtonDisabled({ input, error, buttonSubmit }) {
+        buttonSubmit.classList.add(this._settings.inactiveButtonClass);
+        buttonSubmit.disabled = true;
+    }
 
-    // _popupButtonAсtive({ input, error, button }) {
-    //     buttonSubmit.classList.remove(inactiveButtonClass);
-    //     buttonSubmit.disabled = false;
-    // }
+    _popupButtonAсtive({ input, error, buttonSubmit }) {
+        buttonSubmit.classList.remove(this._settings.inactiveButtonClass);
+        buttonSubmit.disabled = false;
+    }
 
 
-    _showInputError({ input, error, button }) {
+    _showInputError({ input, error, buttonSubmit }) {
         const errorMessage = input.validationMessage || "error";
         input.classList.add(this._settings.inputErrorClass);
         error.textContent = errorMessage;
         error.classList.add(this._settings.errorClass);
-        //_popupButtonDisabled();
+        this._popupButtonDisabled({ input, error, buttonSubmit });
     }
 
-    _hideInputError({ input, error, button }) {
+    _hideInputError({ input, error, buttonSubmit }) {
         input.classList.remove(this._settings.inputErrorClass);
         error.classList.remove(this._settings.errorClass);
         error.textContent = "";
-       //_popupButtonAсtive();
+        this._popupButtonAсtive({ input, error, buttonSubmit });
     }
     _isValid(formElements) {
 
