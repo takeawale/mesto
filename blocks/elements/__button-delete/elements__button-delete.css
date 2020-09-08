@@ -9,6 +9,7 @@
     position: absolute;
     top: 15px;
     right: 5px;
+    outline: none;
 }
 
 .elements__button-delete:hover{

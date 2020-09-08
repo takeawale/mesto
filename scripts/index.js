@@ -97,11 +97,12 @@ const initialCards = [
   },
 ];
 
-const handleImageClick = (data) => {
+export default function handleImageClick(data) {
   imageModalImg.src = data.link;
   imageModalImg.alt = `Изображение ${data.name}`;
   imageModalTitle.textContent = data.name;
-  toggleModalWindow(imageModal);
+
+  toggleModalWindow(imageModal)
 };
 
 const allPopups = Array.from(document.querySelectorAll('.popup'));
@@ -131,12 +132,12 @@ const handleEscape = (evt) => {
 }
 
 
-function setEventListenerEsc(modalWindow) {// открыть модалку    
+function setEventListenerEsc(modalWindow) {   
   document.addEventListener('keydown', handleEscape);
 
 }
 
-function deleteEventListenerEsc(modalWindow) {// закрыть модалку    
+function deleteEventListenerEsc(modalWindow) {   
   document.removeEventListener('keydown', handleEscape);
 
 }
@@ -160,7 +161,7 @@ function addCardSubmitHandler(evt) {
 }
 
 function renderCard(data) {
-  const card = new Card(data, "#card")
+  const card = new Card(data, ".card")
   list.prepend(card.getView());
 
 }
@@ -211,7 +212,7 @@ closeImageModal.addEventListener("click", () => {
 
 
 function onPopupOverlayClick(evt) {
-  if ((evt.target == evt.currentTarget)) {
+  if (evt.target == evt.currentTarget) {
     toggleModalWindow(evt.target);
   }
 }
