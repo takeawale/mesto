@@ -1,3 +1,4 @@
+import "../pages/index.css"
 import Section from './section.js';
 import PopupWithImage from './PopupWithImage.js';
 import PopupWithForm from './PopupWithForm.js';
@@ -111,52 +112,6 @@ const section = new Section({
   }
 }, '.elements');
 section.renderItems()
-
-
-
-
-
-
-
-// function formSubmitHandler(evt) {
-//   evt.preventDefault();
-
-//   profileUser.textContent = titleInputValue.value;
-//   profileDescription.textContent = descriptionInputValue.value;
-
-
-// }
-
-// function addCardSubmitHandler(evt) {
-//   evt.preventDefault();
-
-//   renderCard({ name: placeInput.value, link: urlInput.value });
-//   profileUser.textContent = titleInputValue.value;
-//   profileDescription.textContent = descriptionInputValue.value;
-
-// }
-
-
-
-// closeEditModal.addEventListener("click", () => {
-//   toggleModalWindow(editProfileModal);
-
-
-// });
-
-
-
-// function onPopupOverlayClick(evt) {
-//   if (evt.target == evt.currentTarget) {
-//     toggleModalWindow(evt.target);
-//   }
-// }
-
-
-
-// editProfileModal.addEventListener("click", onPopupOverlayClick);
-// addCardModal.addEventListener("click", onPopupOverlayClick);
-// imageModal.addEventListener("click", onPopupOverlayClick);
 
 const popup = new PopupWithForm('.popup_type_edit', ({name, description}) => {
   console.log('213')

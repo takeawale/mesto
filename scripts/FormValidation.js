@@ -3,27 +3,15 @@ export default class FormValidation {
         this._settings = settings;
         this._form = form;
     }
-    // _popupButtonDisabled({ input, error, buttonSubmit }) {
-    //     buttonSubmit.classList.add(this._settings.inactiveButtonClass);
-    //     buttonSubmit.disabled = true;
-    // }
 
-    // _popupButtonAсtive({ input, error, buttonSubmit }) {
-    //     buttonSubmit.classList.remove(this._settings.inactiveButtonClass);
-    //     buttonSubmit.disabled = false;
-    // }
-
-  // в агрументах передаем все инпуты и кнопку 
 _toggleButtonState({ inputList, buttonSubmit }) { 
-    // проверяем если все они валидные, то isValid будет true, если нет - false
+
     const isValid = inputList.every(input => input.validity.valid);
-    // если валидные то кнопку делаем активной и выходим из функции
     if(isValid) {
         buttonSubmit.classList.remove(this._settings.inactiveButtonClass); 
         buttonSubmit.disabled = false; 
         return;
     }
-   // если не все валидные, то падаем сюда и делаем ее неактивной
     buttonSubmit.classList.add(this._settings.inactiveButtonClass); 
     buttonSubmit.disabled = true; 
 } 

@@ -35,7 +35,3 @@ export default class Popup {
     }
 }
 
-
-const handleEscape = (evt) => {
-
-}

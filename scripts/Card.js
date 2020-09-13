@@ -21,17 +21,18 @@ export default class Card {
       ".elements__button-delete"
     );
     cardLikeButton.addEventListener("click", this._handleLikeIcon)
-    cardDeleteButton.addEventListener("click", this._handleDeleteClick)
+    cardDeleteButton.addEventListener("click", function() {
+      this._handleDeleteClick()
+    })
     cardImage.addEventListener("click", () => {
       this._handleCardClick(this._link, this._name)
     });
   }
-
   handleImageClick() {
     handleImageClick({ name: this._name, link: this._link })
   }
 
-  _handleDeleteClick = () => {
+  _handleDeleteClick() {
     this._cardElement.remove();
   }
   _handleLikeIcon(evt) {
@@ -56,41 +57,3 @@ export default class Card {
 
 
 
-
-// class Popup {
-//   constructor(??селектор попапа) {
-
-//   }
-
-// }
-
-// class PopupWithImage {
-//   constructor() {
-
-//   }
-
-// }
-
-// class PopupWithForm {
-//   constructor() {
-
-//   }
-
-
-//   _getInputValues{
-
-//   }
-// }
-
-// class UserInfo {
-//   constructor() {
-
-//   }
-
-//   getUserInfo{
-
-//   }
-//   setUserInfo{
-
-//   }
-// }
