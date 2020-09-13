@@ -1,10 +1,10 @@
 
-import handleImageClick from './index.js';
 export default class Card {
-  constructor({ name, link }, template) {
-    this._name = name
-    this._link = link
-    this._template = template
+  constructor({ name, link }, template, handleCardClick) {
+    this._name = name,
+    this._link = link,
+    this._template = template,
+    this._handleCardClick = handleCardClick
   }
   _getTemplate() {
     const cardTemplate = document.querySelector(this._template)
@@ -23,7 +23,7 @@ export default class Card {
     cardLikeButton.addEventListener("click", this._handleLikeIcon)
     cardDeleteButton.addEventListener("click", this._handleDeleteClick)
     cardImage.addEventListener("click", () => {
-      this.handleImageClick()
+      this._handleCardClick(this._link, this._name)
     });
   }
 
@@ -53,3 +53,44 @@ export default class Card {
   }
 }
 
+
+
+
+
+// class Popup {
+//   constructor(??селектор попапа) {
+
+//   }
+
+// }
+
+// class PopupWithImage {
+//   constructor() {
+
+//   }
+
+// }
+
+// class PopupWithForm {
+//   constructor() {
+
+//   }
+
+
+//   _getInputValues{
+
+//   }
+// }
+
+// class UserInfo {
+//   constructor() {
+
+//   }
+
+//   getUserInfo{
+
+//   }
+//   setUserInfo{
+
+//   }
+// }
