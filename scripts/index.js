@@ -2,7 +2,7 @@ import "../pages/index.css"
 import Section from './section.js';
 import PopupWithImage from './PopupWithImage.js';
 import PopupWithForm from './PopupWithForm.js';
-import Popup from './popup.js';
+
 import Card from './Card.js';
 import FormValidation from './FormValidation.js';
 import UserInfo from './userInfo.js';
@@ -18,7 +18,7 @@ const config = {
 // wrappers
 const addCardModal = document.querySelector(".popup_type_new-card");
 const editProfileModal = document.querySelector(".popup_type_edit");
-const imageModal = document.querySelector(".popup_type_image");
+
 
 
 const editForm = editProfileModal.querySelector(".form");
@@ -34,17 +34,6 @@ editFormValidation.enableValidation()
 
 const editButton = document.querySelector(".profile__editButton");
 const addButton = document.querySelector(".profile__addButton");
-const imageButton = document.querySelector(".elements__image-button");
-
-
-
-const formButtonSave = editProfileModal.querySelector(".form__button");
-const formButtonCreate = addCardForm.querySelector(".form__button");
-
-//title and description
-
-const profileUser = document.querySelector(".profile__user");
-const profileDescription = document.querySelector(".profile__description");
 
 // inputs
 
@@ -52,17 +41,6 @@ const titleInputValue = editForm.querySelector(".form__input_content_name");
 const descriptionInputValue = editForm.querySelector(
   ".form__input_content_job"
 );
-
-const placeInput = addCardForm.querySelector(".form__input_type_place");
-const urlInput = addCardForm.querySelector(".form__input_type_url");
-
-const imageModalTitle = imageModal.querySelector(".popup__caption");
-const imageModalImg = imageModal.querySelector(".popup__image");
-
-const cardTemplate = document
-  .querySelector("#card")
-  .content.querySelector(".elements__item");
-const list = document.querySelector(".elements");
 
 
 
