@@ -21,7 +21,7 @@ export default class Card {
       ".elements__button-delete"
     );
     cardLikeButton.addEventListener("click", this._handleLikeIcon)
-    cardDeleteButton.addEventListener("click", function() {
+    cardDeleteButton.addEventListener("click", () => {
       this._handleDeleteClick()
     })
     cardImage.addEventListener("click", () => {
