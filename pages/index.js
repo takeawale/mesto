@@ -1,11 +1,12 @@
-import "../pages/index.css"
-import Section from './section.js';
-import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithForm.js';
 
-import Card from './Card.js';
-import FormValidation from './FormValidation.js';
-import UserInfo from './userInfo.js';
+import "./index.css"
+import Section from '../scripts/section.js';
+import PopupWithImage from '../scripts/PopupWithImage.js';
+import PopupWithForm from '../scripts/PopupWithForm.js';
+
+import Card from '../scripts/Card.js';
+import FormValidator from '../scripts/FormValidator.js';
+import UserInfo from '../scripts/userInfo.js';
 
 const config = {
   inputSelector: '.form__input',
@@ -23,10 +24,10 @@ const editProfileModal = document.querySelector(".popup_type_edit");
 
 const editForm = editProfileModal.querySelector(".form");
 const addCardForm = addCardModal.querySelector(".form");
-const addFormValidation = new FormValidation(config, addCardForm)
+const addFormValidation = new FormValidator(config, addCardForm)
 addFormValidation.enableValidation()
 
-const editFormValidation = new FormValidation(config, editForm)
+const editFormValidation = new FormValidator(config, editForm)
 editFormValidation.enableValidation()
 
 
@@ -78,14 +79,17 @@ const initialCards = [
   },
 ];
 
+const createCard = (data) => {
+  return new Card(data, ".card", (link, name) => {
+    popupWithImage.open(link, name)
+  })
+}
 
 const section = new Section({
   items: initialCards, renderer: (data) => {
 
-    const card = new Card(data, ".card", (link, name) => {
-      popupWithImage.open(link, name)
-    })
-    section.addItem(card.getView())
+    const card = createCard(data);
+    section.addItem(card.getView(), true)
     console.log(card)
   }
 }, '.elements');
@@ -114,9 +118,7 @@ popupWithImage.setEventListneres()
 
 
 const popupAddCard = new PopupWithForm('.popup_type_new-card', (data) => {
-const card = new Card(data, ".card", (link, name) => {
-  popupWithImage.open(link, name)
-})
+const card = createCard(data);
 section.addItem(card.getView())
 });
 

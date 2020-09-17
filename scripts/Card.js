@@ -16,11 +16,11 @@ export default class Card {
   }
   _setEventListeners() {
     const cardImage = this._cardElement.querySelector(".elements__image");
-    const cardLikeButton = this._cardElement.querySelector(".elements__button");
+    this._cardLikeButton = this._cardElement.querySelector(".elements__button");
     const cardDeleteButton = this._cardElement.querySelector(
       ".elements__button-delete"
     );
-    cardLikeButton.addEventListener("click", this._handleLikeIcon)
+    this._cardLikeButton.addEventListener("click",  () => {this._handleLikeIcon()})
     cardDeleteButton.addEventListener("click", () => {
       this._handleDeleteClick()
     })
