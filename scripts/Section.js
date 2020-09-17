@@ -12,8 +12,13 @@ export default class Section {
         })
     }
 
-    addItem(card) {
-        this._sectionElement.prepend(card)
+    addItem(card, isArray) {
+        if(isArray) {
+            this._sectionElement.append(card)
+        } else {
+            this._sectionElement.prepend(card)
+        }
+        
     }
 }
 

@@ -36,12 +36,10 @@ export default class Card {
     this._cardElement.remove();
   }
   _handleLikeIcon(evt) {
-    evt.target.classList.toggle("elements__buttonActive");
+    this._cardLikeButton.classList.toggle("elements__buttonActive");
   }
   getView() {
-    const cardTemplate = this._getTemplate();
-    this._cardElement = cardTemplate.cloneNode(true);
-
+    this._cardElement = this._getTemplate();
 
     const cardImage = this._cardElement.querySelector(".elements__image");
     const cardTitle = this._cardElement.querySelector(".element__title");
