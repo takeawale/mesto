@@ -22,25 +22,3 @@ position: absolute;
 
 }
 
-.dd {
-  width: 150px;
-  height: 150px;
-  display: flex;
-}
-
-.profile__avatar-hover{
-  margin-left: 67px;
-width: 26px;
-height: 26px;
-display: none;
-z-index: 2;
-align-self: center;
-justify-content: center;
-
-}
-
-
-.profile__avatar-hover:hover {
-  display: inline;
-  
-  }
