@@ -2,4 +2,45 @@
   width: 150px;
   height: 150px;
   border-radius: 100%;
+  /*background-image: url(/images/avatar.png);*/
+  background-size: 100%;
+
+position: absolute;
+
+
 }
+
+
+.profile__avatar:hover  {
+  display: block;
+  background-image: url(/images/pencil.svg);
+  cursor: pointer;
+  opacity: 0.2;
+  
+
+
+
+}
+
+.dd {
+  width: 150px;
+  height: 150px;
+  display: flex;
+}
+
+.profile__avatar-hover{
+  margin-left: 67px;
+width: 26px;
+height: 26px;
+display: none;
+z-index: 2;
+align-self: center;
+justify-content: center;
+
+}
+
+
+.profile__avatar-hover:hover {
+  display: inline;
+  
+  }

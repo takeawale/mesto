@@ -12,6 +12,9 @@
     outline: none;
 }
 
+
+
+
 .elements__button-delete:hover{
     background-image: url(../../../images/binHover.svg);
     cursor: pointer;

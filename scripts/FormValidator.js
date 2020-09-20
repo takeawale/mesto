@@ -4,17 +4,17 @@ export default class FormValidation {
         this._form = form;
     }
 
-_toggleButtonState({ inputList, buttonSubmit }) { 
+    _toggleButtonState({ inputList, buttonSubmit }) {
 
-    const isValid = inputList.every(input => input.validity.valid);
-    if(isValid) {
-        buttonSubmit.classList.remove(this._settings.inactiveButtonClass); 
-        buttonSubmit.disabled = false; 
-        return;
+        const isValid = inputList.every(input => input.validity.valid);
+        if (isValid) {
+            buttonSubmit.classList.remove(this._settings.inactiveButtonClass);
+            buttonSubmit.disabled = false;
+            return;
+        }
+        buttonSubmit.classList.add(this._settings.inactiveButtonClass);
+        buttonSubmit.disabled = true;
     }
-    buttonSubmit.classList.add(this._settings.inactiveButtonClass); 
-    buttonSubmit.disabled = true; 
-} 
     _showInputError({ input, error, buttonSubmit }) {
         const errorMessage = input.validationMessage || "error";
         input.classList.add(this._settings.inputErrorClass);
@@ -48,10 +48,10 @@ _toggleButtonState({ inputList, buttonSubmit }) {
                 error: errorElement,
                 buttonSubmit,
             };
-            inputElement.addEventListener("input", () => { 
-                this._isValid(formElements); 
+            inputElement.addEventListener("input", () => {
+                this._isValid(formElements);
                 this._toggleButtonState({ inputList, buttonSubmit })
-             });
+            });
         });
     }
     enableValidation() {
