@@ -1,3 +1,6 @@
+const handleOriginalResponse = res => res.ok ? res.json() : Promise.reject('ERROR' + res.statusText);
+const handleErrorResponse = error => console.log(error);
+
 export default class Api {
 constructor({baseUrl, headers}) {
 this._baseUrl = baseUrl,
@@ -5,23 +8,23 @@ this._headers = headers
 }
 
 getUserInfo() {
-return fetch(this._baseUrl + '/users/me', {
+  return fetch(`${this._baseUrl}/users/me`, {
     headers: {
       authorization: this._headers.authorization
     }
   })
-    .then(res => res.ok ? res.json() : Promise.reject('ERROR' + res.statusText))
-.catch(error => {console.log(error)})
+    .then(handleOriginalResponse)
+    .catch(handleErrorResponse)
 }
 
 getCardsInfo() {
-    return fetch(this._baseUrl + '/cards', {
+    return fetch(`${this._baseUrl}/cards`, {
         headers: {
           authorization: this._headers.authorization
         }
       })
-        .then(res => res.ok ? res.json() : Promise.reject('ERROR' + res.statusText))
-        .catch(error => {console.log(error)})
+        .then(handleOriginalResponse)
+        .catch(handleErrorResponse)
 }
 
 getApplicationInfo() {
@@ -29,7 +32,7 @@ getApplicationInfo() {
 }
 
 editProfile(name, about) {
-    return fetch(this._baseUrl + '/users/me', {
+    return fetch(`${this._baseUrl}/users/me`, {
         headers: {
           authorization: this._headers.authorization,
           'Content-Type': 'application/json'
@@ -40,12 +43,12 @@ editProfile(name, about) {
           }),
         method: 'PATCH'
       })
-        .then(res => res.ok ? res.json() : Promise.reject('ERROR' + res.statusText))
-        .catch(error => {console.log(error)})
+        .then(handleOriginalResponse)
+        .catch(handleErrorResponse)
 }
 
 addCard(name, link) {
-    return fetch(this._baseUrl + '/cards', {
+    return fetch(`${this._baseUrl}/cards`, {
         headers: {
           authorization: this._headers.authorization,
           'Content-Type': 'application/json'
@@ -56,8 +59,8 @@ addCard(name, link) {
           }),
         method: 'POST'
       })
-        .then(res => res.ok ? res.json() : Promise.reject('ERROR' + res.statusText))
-        .catch(error => {console.log(error)})
+        .then(handleOriginalResponse)
+        .catch(handleErrorResponse)
 }
  
 
@@ -69,8 +72,8 @@ removeCard(cardId) {
         },
         method: 'DELETE'
       })
-        .then(res => res.ok ? res.json() : Promise.reject('ERROR' + res.statusText))
-        .catch(error => {console.log(error)})
+        .then(handleOriginalResponse)
+        .catch(handleErrorResponse)
 }
 
 changeLikeStatus(cardId, isLiked) {
@@ -81,8 +84,8 @@ changeLikeStatus(cardId, isLiked) {
         },
         method: isLiked ? 'DELETE' : 'PUT'
       })
-        .then(res => res.ok ? res.json() : Promise.reject('ERROR' + res.statusText))
-        .catch(error => {console.log(error)})
+        .then(handleOriginalResponse)
+        .catch(handleErrorResponse)
 }
 
 setUserAvatar(avatarSrc) {
@@ -96,7 +99,7 @@ setUserAvatar(avatarSrc) {
           }),
         method: 'PATCH'
       })
-        .then(res => res.ok ? res.json() : Promise.reject('ERROR' + res.statusText))
-        .catch(error => {console.log(error)})
+        .then(handleOriginalResponse)
+        .catch(handleErrorResponse)
 }
 }

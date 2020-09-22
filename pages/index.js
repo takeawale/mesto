@@ -202,7 +202,7 @@ api.getApplicationInfo()
 
     })
     popupAvatar.setEventListneres()
-    const avatar = document.querySelector('.profile__avatar');
+    const avatar = document.querySelector('.profile__dev');
     avatar.addEventListener('click', () => {
       popupAvatar.open()
     })
@@ -211,10 +211,6 @@ api.getApplicationInfo()
   .catch(error => {
     console.log("ошибка на этапе рендеринга", error)
   })
-
-
-
-
 
 
 const changeButtonFormText = (isLoading) => {

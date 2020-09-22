@@ -4,21 +4,5 @@
   border-radius: 100%;
   /*background-image: url(/images/avatar.png);*/
   background-size: 100%;
-
-position: absolute;
-
-
+  position: absolute;
 }
-
-
-.profile__avatar:hover  {
-  display: block;
-  background-image: url(/images/pencil.svg);
-  cursor: pointer;
-  opacity: 0.2;
-  
-
-
-
-}
-
